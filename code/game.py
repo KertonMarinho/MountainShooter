@@ -3,21 +3,21 @@
 import pygame
 class Game:
     def __init__(self):
-        self.window = None
+       pygame.init()
+        self.window = pygame.display.set_mode(size=(576, 324))
 
-    def run(self, ):
-        print('setup start')
-        pygame.init()
-        window = pygame.display.set_mode(size=(600, 480))
-        print('setup end ')
-
-        print('loop start')
+    def run(self):
         while True:
+            menu= Menu(self.window)
+            menu.run()
+            pass
+
+
             # check for all events
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()  # Close window
-                    quit() #endgame
+            #for event in pygame.event.get():
+                #if event.type == pygame.QUIT:
+                    #pygame.quit()  # Close window
+                    #quit() #endgame
 
 
 
